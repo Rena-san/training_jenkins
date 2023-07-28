@@ -1,8 +1,11 @@
 from sum import calculate
+import logging
+
+
 
 
 def test_sum(name):
     n = calculate(2, 3)
-    print(name)
-    assert n == 5, 'n != 5'
-
+    # print(name)
+    logging.error('Error')
+    assert n == 3, 'n != 5'
