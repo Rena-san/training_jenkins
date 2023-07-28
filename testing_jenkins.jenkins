@@ -5,10 +5,20 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
-    stages {
-        stage('Test') {
+    stage("Checkout Code") {
+        steps {
+            script {
+                git branch: "main",
+                    credentialsId: 'DESKTOP-0IPILK4$',
+                    url: 'https://github.com/Rena-san/training_jenkins'
+            }
+        }
+    }
+    stage('Installing packages') {
             steps {
-                python -m venv venv
+                script {
+                    sh 'pip -r requirements.txt'
+                }
             }
         }
 
