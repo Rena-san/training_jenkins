@@ -14,11 +14,21 @@ pipeline {
         stage('Setup') {
             steps {
                 sh "python -m venv venv"
-                sh "source venv/Scripts/activate"
-                sh "pip install -r requirements.txt"
+                sh """
+                    source venv/Scripts/activate
+                    pip install -r requirements.txt
+                """
+
             }
         }
+        stage('Run Tests') {
+            steps {
+                sh """
+                    source venv/Scripts/activate
+                    pytest
+                """
+            }
         }
-
     }
+}
 
