@@ -31,10 +31,10 @@ pipeline {
         }
 
          post {
-        always {
-            archiveArtifacts artifacts: 'requirements.txt', fingerprint: true
+            always {
+                archiveArtifacts artifacts: 'requirements.txt', fingerprint: true
 
+            }
         }
-    }
     }
 }
