@@ -10,11 +10,10 @@ pipeline {
                 }
             }
         }
-        stage('Installing packages') {
+       stages {
+        stage('Pytest') {
             steps {
-                script {
-                    sh 'c:/Users/Anubis/AppData/Local/Programs/Python/Python39/python.exe -m venv venv '
-                }
+                sh("${JENKINS_HOME}/scripts/pytest.sh ${WORKSPACE}")
             }
         }
 
@@ -27,4 +26,5 @@ pipeline {
             }
         }
     }
+   }
    }
