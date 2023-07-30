@@ -13,7 +13,7 @@ pipeline {
 
         stage('Pytest') {
             steps {
-                sh("${JENKINS_HOME}/scripts/pytest.sh ${WORKSPACE}")
+                sh("${JENKINS_HOME}/scripts/pytest.exe ${WORKSPACE}")
             }
         }
 
