@@ -1,5 +1,3 @@
-PYENV_HOME=$WORKSPACE/venv
-
 pipeline {
     agent any
     stages {
@@ -16,18 +14,10 @@ pipeline {
         stage('Setup') {
             steps {
                 sh "python -m venv venv"
-                sh """
-                    . $PYENV_HOME/Scripts/activate
-                    $PYENV_HOME/Scripts/pip install -r requirements.txt
-                """
+                sh ("${WORKSPACE} venv/Scripts/activate")
+
+
 
             }
         }
-        stage('Run Tests') {
-            steps {
-                sh("${JENKINS_HOME}/scripts/pytest ${WORKSPACE}")
-            }
-        }
-    }
-}
 
