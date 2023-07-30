@@ -10,7 +10,7 @@ pipeline {
                 }
             }
         }
-       stages {
+
         stage('Pytest') {
             steps {
                 sh("${JENKINS_HOME}/scripts/pytest.sh ${WORKSPACE}")
@@ -26,5 +26,4 @@ pipeline {
             }
         }
     }
-   }
-   }
+  }
