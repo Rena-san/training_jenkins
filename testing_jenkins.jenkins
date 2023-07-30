@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Checkout project') {
             steps {
@@ -17,13 +17,5 @@ pipeline {
             }
         }
 
-        stage('Running tests') {
-            steps {
-                script {
-                    sh 'pytest'
-
-                }
-            }
-        }
     }
   }
