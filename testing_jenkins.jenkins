@@ -1,9 +1,6 @@
 pipeline {
     agent {
-        node {
-           
-            customWorkspace 'c:/ProgramData/Jenkins/.jenkins/workspace/training_jenkins/'
-        }
+        none
     }
     stages {
         stage('Checkout project') {
