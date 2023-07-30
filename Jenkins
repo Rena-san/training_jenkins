@@ -14,7 +14,7 @@ pipeline {
         stage('Setup') {
             steps {
                 sh "python -m venv venv"
-                sh ("${WORKSPACE}venv\Scripts\activate")
+                sh ("${WORKSPACE}/venv/Scripts/activate")
 
 
 
