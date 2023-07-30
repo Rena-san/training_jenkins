@@ -1,19 +1,11 @@
-#! groovy
+
 properties ([disableConcurrentBuilds()])
 pipeline {
     agent any
     options {
         skipStagesAfterUnstable()
     }
-    stage("Checkout Code") {
-        steps {
-            script {
-                git branch: "main",
-                    credentialsId: 'DESKTOP-0IPILK4$',
-                    url: 'https://github.com/Rena-san/training_jenkins'
-            }
-        }
-    }
+
     stage('Installing packages') {
             steps {
                 script {
