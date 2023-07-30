@@ -13,7 +13,9 @@ pipeline {
 
         stage('Pytest') {
             steps {
-                sh("${JENKINS_HOME}/scripts/pytest.exe ${WORKSPACE}")
+                withPythonEnv('venv'){
+                sh 'python -m venv venv'
+                }
             }
         }
 
