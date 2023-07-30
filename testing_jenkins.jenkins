@@ -2,7 +2,7 @@ pipeline {
     agent {
         node {
             label 'my_local_server'
-            customWorkspace 'c:\ProgramData\Jenkins\.jenkins\workspace\training_jenkins\'
+            customWorkspace 'c:/ProgramData/Jenkins/.jenkins/workspace/training_jenkins/'
         }
     }
     stages {
