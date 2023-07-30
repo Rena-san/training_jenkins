@@ -6,12 +6,12 @@ pipeline {
         skipStagesAfterUnstable()
     }
 
-    stage('Installing packages') {
-            steps {
-                script {
+    stage('run pytest') {
+
+
                     bat 'pytest'
-                }
-            }
+
+
         }
 
     }
