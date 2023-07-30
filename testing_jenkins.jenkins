@@ -9,7 +9,7 @@ pipeline {
     stage('Installing packages') {
             steps {
                 script {
-                    sh 'pip -r requirements.txt'
+                    bat 'pytest'
                 }
             }
         }
