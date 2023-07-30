@@ -1,17 +1,35 @@
-
-properties ([disableConcurrentBuilds()])
 pipeline {
-    agent any
-    options {
-        skipStagesAfterUnstable()
+    agent {
+        node {
+            label 'my_local_server'
+            customWorkspace 'c:\ProgramData\Jenkins\.jenkins\workspace\training_jenkins\'
+        }
     }
-
-    stage('run pytest') {
-
-
-                    bat 'pytest'
-
-
+    stages {
+        stage('Checkout project') {
+            steps {
+                script {
+                    git branch: "main",
+                        credentialsId: 'DESKTOP-0IPILK4$',
+                        url: 'https://github.com/Rena-san/training_jenkins'
+                }
+            }
+        }
+        stage('Installing packages') {
+            steps {
+                script {
+                    sh 'pip install -r requirements.txt'
+                }
+            }
         }
 
+        stage('Running tests') {
+            steps {
+                script {
+                    sh 'pytest'
+
+                }
+            }
+        }
     }
+   }
