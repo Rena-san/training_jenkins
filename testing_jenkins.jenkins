@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'training_jenkins'
+           
             customWorkspace 'c:/ProgramData/Jenkins/.jenkins/workspace/training_jenkins/'
         }
     }
